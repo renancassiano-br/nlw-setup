@@ -1,0 +1,155 @@
+/* reset para todos */
+* {
+  margin: 0;
+  padding: 0;
+  /* definir o limite de tamanho a partir da bordar. */
+  box-sizing: border-box;
+}
+
+/* geral */
+body {
+  background-color: #09090a;
+  color: white;
+  /*
+  display: grid;  habilita o place-itens abaixo
+  place-items: center;
+  */
+  height: 100vh; /* 100% da área visível */
+}
+
+header {
+  padding: 48px;
+  /* deixando o cabeçalho sempre visível */
+  position: fixed;
+  /* ocupar a largura */
+  width: 100%;
+
+  background-color: #09090a;
+}
+
+/* alterando mais de um elemento para alinhar ao centro com o display flex */
+header,
+button {
+  /* no button a propriedade será sobrescrita */
+  /* padding: 48px; */
+
+  /* alinhar os itens internos de um elemneto */
+  display: flex;
+  align-items: center;
+  /* 
+    # Elementos justificados:
+    - o primeiro item não tem espaço na esquerda 
+    - o último item não tem espaço na direita
+    - os itens do meio, tem espaço em ambos os lados
+  */
+  justify-content: space-between;
+}
+
+button {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid #8b5cf6;
+  background-color: transparent;
+  color: white;
+
+  /* alinhar os itens internos de um elemneto */
+  /* display: flex;
+  align-items: center; */
+  /* espaço entre elementos uso junto com o flex */
+  gap: 12px;
+
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+#form-habits {
+  padding: 182px 48px 48px;
+  /* encaixando o conteúdo na largura */
+  width: -moz-fit-content;
+  width: fit-content;
+
+  display: flex;
+}
+
+.habits {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days {
+  display: flex;
+  /* espaço entre */
+  gap: 48px;
+  margin-left: 32px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* alterando elemntos filhos de tipo específico em uma classe */
+.day div {
+  margin-bottom: 8px;
+
+  font-family: "Roboto Mono";
+  font-size: 20px;
+  line-height: 125%;
+  text-align: center;
+}
+
+input {
+  /* removendo aparência para habilitar novas funç~es */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* ajuste de tamanho */
+  width: 64px;
+  height: 64px;
+
+  border: 2px solid #27272a;
+  border-radius: 8px;
+
+  background: #181818;
+}
+
+/* pseudo-selector */
+input:checked {
+  background: #8b5cf6;
+  border: 2px solid #a78bfa;
+}
+
+/* responsivoao tamanho de tela */
+@media (max-width: 570px) {
+  button div {
+    /* apagando o texto do */
+    display: none;
+  }
+}
+
+/* Ilustrativo */
+/*
+body * {
+  border: 1px solid red;
+  /*preenchimento externo, ao redor do elemento 
+  margin: 24px;
+  /* preenchimento interno, por dentro do elemento, antes da borda 
+  padding: 24px;
+}
+*/
